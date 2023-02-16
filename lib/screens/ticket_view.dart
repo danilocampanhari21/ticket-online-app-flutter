@@ -1,5 +1,6 @@
  import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:untitled1/utils/app_layout.dart';
 import 'package:untitled1/utils/app_styles.dart';
 import 'package:untitled1/widgets/thick_container.dart';
@@ -61,14 +62,23 @@ class TicketView extends StatelessWidget {
 
                        Expanded(child: Container()),
 
-                       Text("London", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                       Text("LDN", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
                      ],
                    ),
+                   const Gap(3),
                    Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        SizedBox(
                          width: 100,child: Text('New-York', style: Styles.headLineStyle4.copyWith(color:Colors.white),),
-                       )
+
+                       ),
+                       Text("8H 30M", style: Styles.headLineStyle4.copyWith(color: Colors.white),),
+
+                       SizedBox(
+                         width: 100,child: Text('London', textAlign: TextAlign.end, style: Styles.headLineStyle4.copyWith(color:Colors.white),),
+
+                       ),
                      ],
                    )
                  ],
