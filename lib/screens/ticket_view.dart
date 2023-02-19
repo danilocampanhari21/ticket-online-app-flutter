@@ -18,6 +18,9 @@ class TicketView extends StatelessWidget {
          margin: const EdgeInsets.only(left: 16),
          child: Column(
            children: [
+             /*
+             showming the blue part of the card/ticket
+              */
              Container(
                decoration: const BoxDecoration(
                 color: Color(0xFF526799),
@@ -81,6 +84,59 @@ class TicketView extends StatelessWidget {
                        ),
                      ],
                    )
+                 ],
+               ),
+             ),
+             /*
+             showming the orange part of the card/ticket
+              */
+             Container(
+               color: Styles.orangeColor, //const Color(0xFFF37B67),
+               child: Row(
+                 children: [
+                   SizedBox(
+                     height: 20,
+                     width: 10,
+                     child: DecoratedBox(
+                       decoration: BoxDecoration(
+                         color: Colors.white,
+                         borderRadius: BorderRadius.only(
+                           topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10)
+                         )
+                       ),
+                     ),
+                   ),
+                   Expanded(child: LayoutBuilder(
+                      builder: (BuildContext , BoxConstraints ) {
+                       return Flex(
+                         direction: Axis.horizontal,
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         mainAxisSize: MainAxisSize.max,
+                         children: List.generate(5, (index) => SizedBox(
+                           width: 5,height: 1,
+                           child: DecoratedBox(
+                             decoration: BoxDecoration(
+                                 color: Colors.white
+                             ),
+                           ),
+                         )),
+                       );
+                   },
+                   )),
+                   SizedBox(
+                     height: 20,
+                     width: 10,
+                     child: DecoratedBox(
+                       decoration: BoxDecoration(
+                         color: Colors.white,
+                         borderRadius: BorderRadius.only(
+                           topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10)
+                         )
+                       ),
+                     ),
+                   ),
                  ],
                ),
              )
